@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <form id="adminLoginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#adminLoginForm').submit(function(event){
+                event.preventDefault();
+                const username = $('#username').val();
+                const password = $('#password').val();
+
+                // Perform login authentication here
+                // For demonstration purposes, you can check hardcoded values
+                if(username === 'admin' && password === 'password') {
+                    window.location.href = 'admin.html'; // Redirect to admin panel
+                } else {
+                    alert('Invalid username or password');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

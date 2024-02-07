@@ -1,0 +1,19 @@
+{
+  "name": "football_table-master",
+  "version": "1.0.0",
+  "description": "Турнирная таблица для 8ми команд. Сборщик - gulp. Использовался bootstrap v5, иконка кубка https://iconmonstr.com/ Проект находится внутри папки",
+  "main": "main.js",
+  "scripts": {
+    "test": "go"
+  },
+  "keywords": [
+    "Dota",
+    "2",
+    "Tournament"
+  ],
+  "author": "Chaika",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

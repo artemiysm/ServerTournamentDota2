@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Welcome to Admin Panel</h1>
+    <p>You have access to edit scores and team names.</p>
+
+    <!-- Админ-панель форма -->
+    <form id="adminForm">
+        <label for="teamName">Team Name:</label>
+        <input type="text" id="teamName" name="teamName" required>
+
+        <label for="score">Score:</label>
+        <input type="number" id="score" name="score" required>
+
+        <button type="button" onclick="updateScoreAndName()">Update Score and Name</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        function updateScoreAndName() {
+            const teamName = document.getElementById('teamName').value;
+            const score = document.getElementById('score').value;
+
+            socket.emit('updateScore', { teamName, score });
+            socket.emit('updateTeamName', { teamName, score });
+        }
+    </script>
+</body>
+</html>
